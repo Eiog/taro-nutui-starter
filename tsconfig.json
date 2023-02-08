@@ -31,9 +31,7 @@
     ]
   },
   "include": [
-    "./src",
-    "./types",
-    "components.d.ts"
+    "./src"
   ],
   "compileOnSave": false
 }
