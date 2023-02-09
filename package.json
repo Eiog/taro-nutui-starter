@@ -80,6 +80,7 @@
     "unocss": "^0.48.0",
     "unocss-preset-weapp": "^0.3.0",
     "unplugin-auto-import": "^0.13.0",
+    "unplugin-icons": "^0.15.2",
     "unplugin-vue-components": "^0.22.12",
     "vue-loader": "^17.0.0",
     "webpack": "5.69.0"

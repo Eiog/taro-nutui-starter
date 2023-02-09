@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "taro",
   "description": "taro+nutui4",
-  "appid": "wxca272ba6bdf568d8",
+  "appid": "touristappid",
   "setting": {
     "urlCheck": true,
     "es6": false,
@@ -14,7 +14,8 @@
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
-    }
+    },
+    "condition": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.30.0",

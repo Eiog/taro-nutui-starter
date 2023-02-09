@@ -1,4 +1,5 @@
 import Components from 'unplugin-vue-components/webpack'
+import Icons from 'unplugin-icons/webpack'
 import AutoImport from 'unplugin-auto-import/webpack'
 import UnoCSS from 'unocss/webpack'
 const NutUIResolver = () => {
@@ -50,7 +51,8 @@ const config = {
   },
   mini: {
     webpackChain(chain) {
-      // eslint-disable-next-line no-unused-expressions
+      // eslint-disable-next-line no-unused-expressions, no-sequences
+      chain.plugin('unplugin-icons').use(Icons({ compiler: 'vue3' })),
       chain.plugin('unplugin-vue-components').use(
         Components({
           dirs: ['src/components', 'src/layouts'],
@@ -59,7 +61,6 @@ const config = {
           dts: 'src/typings/components.d.ts',
           resolvers: [NutUIResolver()],
         }),
-      // eslint-disable-next-line no-sequences
       ),
       chain.plugin('unplugin-auto-import').use(AutoImport(
         {
@@ -102,7 +103,8 @@ const config = {
   },
   h5: {
     webpackChain(chain) {
-      // eslint-disable-next-line no-unused-expressions
+      // eslint-disable-next-line no-unused-expressions, no-sequences
+      chain.plugin('unplugin-icons').use(Icons({ compiler: 'vue3' })),
       chain.plugin('unplugin-vue-components').use(
         Components({
           dirs: ['src/components', 'src/layouts'],
@@ -111,7 +113,6 @@ const config = {
           dts: 'src/typings/components.d.ts',
           resolvers: [NutUIResolver()],
         }),
-      // eslint-disable-next-line no-sequences
       ),
       chain.plugin('unplugin-auto-import').use(AutoImport(
         {
@@ -122,11 +123,6 @@ const config = {
             /\.vue\?vue/, // .vue
           ],
           imports: [
-            'vue',
-            '@vueuse/core',
-            'pinia',
-            // 小程序特有的生命周期等从这里引入
-            { '@dcloudio/uni-app': ['onLaunch', 'onShow', 'onHide', 'onLoad'] },
           ],
           dirs: ['src/hooks', 'src/stores', 'src/utils'],
           dts: 'src/typings/auto-import.d.ts',
